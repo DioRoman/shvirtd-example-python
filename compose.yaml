@@ -23,6 +23,7 @@ services:
       - db
     env_file:
       - .env
+      
   db:
     image: mysql:8
     container_name: dio-mysql
