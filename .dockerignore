@@ -1,6 +1,3 @@
 *
 !main.py
 !requirements.txt
-!/haproxy
-!/nginx
-!.env
