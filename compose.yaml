@@ -8,10 +8,10 @@ services:
     container_name: dio-web
     restart: on-failure
     environment:
-      - DB_HOST=172.20.0.10
-      - DB_USER=dio
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_NAME=dio-db
+      - DB_HOST=db
+      - DB_USER=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DB_NAME=${MYSQL_DATABASE}
     networks:
       backend:
         ipv4_address: 172.20.0.5
@@ -34,8 +34,8 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=dio-db
-      - MYSQL_USER=dio
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_HOST="%"
     depends_on:    
