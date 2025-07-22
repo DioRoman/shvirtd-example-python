@@ -9,7 +9,6 @@ services:
     restart: on-failure
     environment:
       - DB_HOST=<MYSQL_HOST_FROM_TERRAFORM>
-      - DB_PORT=3306
       - DB_NAME=<MYSQL_DATABASE_FROM_TERRAFORM>
       - DB_USER=<MYSQL_USER_FROM_TERRAFORM>
       - DB_PASSWORD=<MYSQL_PASSWORD_FROM_TERRAFORM>
