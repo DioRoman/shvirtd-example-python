@@ -8,10 +8,10 @@ services:
     container_name: dio-web
     restart: on-failure
     environment:
-      - DB_HOST=<MYSQL_HOST_FROM_TERRAFORM>
-      - DB_NAME=<MYSQL_DATABASE_FROM_TERRAFORM>
-      - DB_USER=<MYSQL_USER_FROM_TERRAFORM>
-      - DB_PASSWORD=<MYSQL_PASSWORD_FROM_TERRAFORM>
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
     networks:
       backend:
         ipv4_address: 172.20.0.5
