@@ -22,23 +22,17 @@ services:
     env_file:
       - .env
       
-  db:
-    image: mysql:8
-    container_name: dio-mysql
-    restart: on-failure
-    networks:
-      backend:
-        ipv4_address: 172.20.0.10
-    ports:
-      - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_ROOT_HOST="%"
-    depends_on:    
-      - reverse-proxy
-      - ingress-proxy
-    env_file:
-      - .env
+db:
+  image: mysql:8
+  container_name: dio-mysql
+  restart: on-failure
+  networks:
+    backend:
+      ipv4_address: 172.20.0.10
+  ports:
+    - 3306:3306
+  env_file:
+    - .env
+  depends_on:
+    - reverse-proxy
+    - ingress-proxy
